@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "baseline_id": "EXP-001-initial",
+  "documented_on": "2026-09-28",
+  "status": "reported_environment_incomplete_version_capture",
+  "source_repository_base_commit": "517a351568d3144ca3a1d4aaa92ebf6d1794676c",
+  "historical_run_repository_commit": null,
+  "execution_model": "PC VR; rendering on Windows host",
+  "host": {
+    "os": "Windows 11",
+    "os_build": null,
+    "workspace": "D:\\XRLab",
+    "cpu": null,
+    "ram_gb": null,
+    "gpu": null,
+    "gpu_driver": null
+  },
+  "slicer": {
+    "channel": "Preview",
+    "version_family": "5.13",
+    "exact_version": null,
+    "revision": null,
+    "build_date": null,
+    "python_version": null,
+    "vtk_version": null
+  },
+  "slicer_virtual_reality": {
+    "installed_reported": true,
+    "version": null,
+    "revision": null,
+    "backend": "OpenXR"
+  },
+  "xr": {
+    "runtime": "Meta OpenXR Runtime",
+    "runtime_provenance": "existing setup file and prior session summary",
+    "runtime_version": null,
+    "link_application": "Meta Horizon Link",
+    "link_application_version": null,
+    "headset": "Meta Quest 3",
+    "headset_os_version": null,
+    "connection": "USB Quest Link",
+    "connection_provenance": "prior session summary; not reinspected",
+    "air_link_tested": null
+  },
+  "development_tools": {
+    "git_version": null,
+    "vscode_version": null
+  },
+  "dataset": {
+    "name": "MRHead",
+    "source": "3D Slicer Sample Data",
+    "local_filename": null,
+    "format": null,
+    "sha256": null,
+    "dicom_import_validated": false
+  },
+  "rendering": {
+    "preset": null,
+    "settings": null,
+    "fps": null,
+    "latency_ms": null
+  },
+  "validation": {
+    "hardware_rerun_during_baseline_preparation": false,
+    "evidence_type": "retrospective conversation reports",
+    "fully_reproducible": false
+  },
+  "license": "BSD-3-Clause",
+  "additional_project_dependencies": [],
+  "clipping_implemented": false
+}
