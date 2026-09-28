@@ -1,21 +1,26 @@
 # Windows host — EXP-001
 
-## Baseline inventory
+## Current inventory — captured 2026-09-28
 
 | Item | Recorded value | Evidence / precision |
 | --- | --- | --- |
 | OS | Windows 11 | User baseline; build unknown |
 | Workspace | `D:\XRLab` | Existing repository setup file |
-| Slicer | Preview 5.13 | User baseline; exact revision/date unknown |
-| Extension | SlicerVirtualReality | Prior XR sessions; extension revision unknown |
+| Slicer | Preview `5.13.0-2026-09-26`, revision `d38aed7` | User-provided Slicer console output |
+| Bundled Python / VTK | Python `3.12.10`; VTK `9.6.2` | Same console output |
+| Extension | SlicerVirtualReality; manager displays `c9179ed`, updated 2026-09-27 | Screenshot of installed extension page; installed binary revision not independently queried |
 | Backend | OpenXR | Requested baseline and prior session summary |
 | Runtime | Meta OpenXR Runtime, configured through Meta Horizon Link | Existing setup file and prior session summary |
 | Headset | Meta Quest 3 | User baseline |
-| Connection | USB Quest Link, reported in prior session summary | Existing file also listed Air Link; no Air Link result is recorded |
-| GPU, driver, CPU, RAM | Not recorded | Capture on the Windows host |
+| Meta Horizon Link | `208.0.0.57.535` | Explicit user report |
+| Connection | USB Quest Link | Wired Link explicitly confirmed by user; no Air Link test recorded |
+| GPU | AMD Radeon RX 6600, 8 GB dedicated memory | Task Manager screenshot |
+| Windows GPU driver | `32.0.21030.2001`, dated 2025-09-25 | Task Manager screenshot |
+| AMD software displayed version | `25.10.30.02` | AMD application screenshot; separate from Windows driver version |
+| CPU, system RAM | Not recorded | Capture on the Windows host |
 | Git, VS Code | Versions not recorded | Development tools, not XR runtime dependencies |
 
-The machine-readable inventory is [versions/environment.json](../../versions/environment.json). Unknown values are JSON `null`, not assumed version pins.
+The [dated capture record](../../experiments/EXP-001-dicom-mri-volumetric-xr/results/2026-09-28-environment-capture.md) documents evidence and remaining gaps. The machine-readable inventory is [versions/environment.json](../../versions/environment.json). Unknown values are JSON `null`, not assumed version pins.
 
 ## Setup and launch
 
@@ -31,7 +36,7 @@ The baseline uses Slicer's bundled Python and VTK. No separate `pip install vtk`
 
 ## Capture missing metadata
 
-Record `winver` output, CPU/RAM, GPU/driver, headset OS version, Meta Horizon Link version, active runtime and USB connection details. Git and VS Code versions are useful for development provenance only.
+Still capture `winver` output, CPU/system RAM, headset OS version and active runtime confirmation. GPU/driver, Slicer/Python/VTK and Link application versions are now recorded. The Link application version is not assumed to be the OpenXR runtime version. Git and VS Code versions are useful for development provenance only.
 
 In Slicer's Python console, inspect:
 
@@ -45,7 +50,7 @@ print("Python:", sys.version)
 print("VTK:", vtk.vtkVersion.GetVTKVersion())
 ```
 
-Also copy the Slicer About/build information and SlicerVirtualReality details from Extensions Manager. These commands are collection instructions; they were not run on the Windows host during baseline preparation.
+Also copy the Slicer About/build information and SlicerVirtualReality details from Extensions Manager. The user supplied the output of these commands on 2026-09-28; no remote execution on the Windows host was performed.
 
 For each new run record the repository commit, complete environment snapshot, dataset identifier, rendering preset/settings, test date, operator, per-criterion outcome and evidence paths. Keep screenshots limited to the sample dataset. Use a new dated result file and environment snapshot when software or configuration changes.
 
